@@ -12,41 +12,40 @@ import com.sanwix.mh.anothermvvm.viewModels.BaseViewModel;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity
-{
+public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
     private T mViewData;
     private VM mViewModel;
     private EventBus eBus;
 
-    public T getViewData()
-    {
+    public T getViewData() {
         return mViewData;
     }
+
     public abstract int getBindingVarriables();
+
     public abstract int getLayoutId();
+
     public abstract VM getViewModel();
+
     public abstract EventBus getEventBus();
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewData = DataBindingUtil.setContentView(this,getLayoutId());
+        mViewData = DataBindingUtil.setContentView(this, getLayoutId());
         mViewModel = mViewModel != null ? mViewModel : getViewModel();
-        mViewData.setVariable(getBindingVarriables(),mViewModel);
+        mViewData.setVariable(getBindingVarriables(), mViewModel);
     }
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
         eBus.register(this);
     }
 
     @Override
-    protected void onStop()
-    {
+    protected void onStop() {
         if (eBus.isRegistered(this))
             eBus.unregister(this);
         super.onStop();
