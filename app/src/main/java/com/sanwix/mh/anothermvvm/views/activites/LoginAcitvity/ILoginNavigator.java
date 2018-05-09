@@ -1,4 +1,4 @@
-package com.sanwix.mh.anothermvvm.views.Activites.LoginAcitvity;
+package com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity;
 
 public interface ILoginNavigator
 {

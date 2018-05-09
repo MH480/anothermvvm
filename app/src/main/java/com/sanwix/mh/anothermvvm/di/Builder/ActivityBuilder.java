@@ -1,10 +1,10 @@
 package com.sanwix.mh.anothermvvm.di.Builder;
 
 
-import com.sanwix.mh.anothermvvm.views.Activites.LoginAcitvity.LoginActivity;
-import com.sanwix.mh.anothermvvm.views.Activites.LoginAcitvity.LoginActivityModule;
-import com.sanwix.mh.anothermvvm.views.Activites.MainActivity.MainActivity;
-import com.sanwix.mh.anothermvvm.views.Activites.MainActivity.MainActivityModule;
+import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivity;
+import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivityModule;
+import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivity;
+import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivityModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

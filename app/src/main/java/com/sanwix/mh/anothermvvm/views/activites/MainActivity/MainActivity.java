@@ -1,4 +1,4 @@
-package com.sanwix.mh.anothermvvm.views.Activites.MainActivity;
+package com.sanwix.mh.anothermvvm.views.activites.MainActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
 import com.sanwix.mh.anothermvvm.databinding.ActivityMainBinding;
 import com.sanwix.mh.anothermvvm.viewModels.MainActivityVM;
-import com.sanwix.mh.anothermvvm.views.Bases.BaseActivity;
+import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivity;
+import com.sanwix.mh.anothermvvm.views.bases.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -16,10 +17,10 @@ import org.greenrobot.eventbus.Subscribe;
 import javax.inject.Inject;
 
 
-public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityVM>
+public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityVM> implements IMainNavigator
 {
 
-    @Inject MainActivityVM vm;
+    @Inject MainActivityVM viewModel;
     private ActivityMainBinding viewData;
     @Inject EventBus eventBus;
     @Override
@@ -37,7 +38,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     @Override
     public MainActivityVM getViewModel()
     {
-        return vm;
+        return viewModel;
     }
 
     @Override
@@ -55,6 +56,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     {
         super.onCreate(savedInstanceState);
         viewData = getViewData();
+        viewModel.setNavigator(this);
     }
 
 
@@ -63,5 +65,15 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     public void onEvent(Event e)
     {
 
+    }
+
+    @Override
+    public void login() {
+        startActivity(LoginActivity.newIntent(this));
+    }
+
+    @Override
+    public void exit() {
+        System.exit(0);
     }
 }

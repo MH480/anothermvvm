@@ -5,7 +5,6 @@ import android.app.Application;
 import com.sanwix.mh.anothermvvm.di.Builder.ActivityBuilder;
 import com.sanwix.mh.anothermvvm.di.Module.AppModule;
 import com.sanwix.mh.anothermvvm.utils.App;
-import com.sanwix.mh.anothermvvm.views.Activites.MainActivity.MainActivityModule;
 
 import dagger.BindsInstance;
 import dagger.Component;

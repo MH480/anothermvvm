@@ -1,5 +1,6 @@
-package com.sanwix.mh.anothermvvm.views.Activites.LoginAcitvity;
+package com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
@@ -9,7 +10,8 @@ import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
 import com.sanwix.mh.anothermvvm.databinding.ActivityLoginBinding;
 import com.sanwix.mh.anothermvvm.viewModels.LoginActivityVM;
-import com.sanwix.mh.anothermvvm.views.Bases.BaseActivity;
+import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivity;
+import com.sanwix.mh.anothermvvm.views.bases.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -46,6 +48,10 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginActiv
         return eventBus;
     }
 
+    public static Intent newIntent(BaseActivity base)
+    {
+        return new Intent(base, LoginActivity.class);
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
