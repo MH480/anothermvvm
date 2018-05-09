@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-
 import com.sanwix.mh.anothermvvm.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
@@ -17,7 +16,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginActivityVM>
+public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginActivityVM> implements ILoginNavigator
 {
     @Inject LoginActivityVM mViewModel;
     @Inject
@@ -52,6 +51,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginActivi
     {
         super.onCreate(savedInstanceState);
         mViewData = getViewData();
+        mViewModel.setNavigator(this);
     }
 
 
@@ -61,5 +61,17 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginActivi
     public void onEvent(Event e)
     {
         Toast.makeText(this, e.eventName, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void btnLogin()
+    {
+
+    }
+
+    @Override
+    public void openMainActivity()
+    {
+
     }
 }

@@ -1,7 +1,7 @@
 package com.sanwix.mh.anothermvvm.views.Activites.MainActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-
 
 import com.sanwix.mh.anothermvvm.BR;
 import com.sanwix.mh.anothermvvm.R;
@@ -46,12 +46,17 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
         return eventBus;
     }
 
+    public static Intent newIntent(BaseActivity base)
+    {
+        return new Intent(base, MainActivity.class);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         viewData = getViewData();
     }
+
 
     @Subscribe
     @Override
