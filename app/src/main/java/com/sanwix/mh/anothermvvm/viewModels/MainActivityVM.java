@@ -1,6 +1,6 @@
 package com.sanwix.mh.anothermvvm.viewModels;
 
-import com.sanwix.mh.anothermvvm.utils.App;
+import com.sanwix.mh.anothermvvm.App;
 import com.sanwix.mh.anothermvvm.views.activites.MainActivity.IMainNavigator;
 
 import javax.inject.Inject;
@@ -12,6 +12,7 @@ public class MainActivityVM extends BaseViewModel<IMainNavigator>
     public MainActivityVM(App app)
     {
         super(app);
+
     }
 
 

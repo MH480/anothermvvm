@@ -20,7 +20,8 @@ public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseVie
     private VM mViewModel;
     private EventBus eBus;
 
-    public T getViewData() {
+    public T getViewData()
+    {
         return mViewData;
     }
 
@@ -34,7 +35,8 @@ public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseVie
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState)
+    {
         PerformInjection();
         super.onCreate(savedInstanceState);
         eBus = getEventBus();
@@ -49,13 +51,15 @@ public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseVie
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
         eBus.register(this);
     }
 
     @Override
-    protected void onStop() {
+    protected void onStop()
+    {
         if (eBus.isRegistered(this))
             eBus.unregister(this);
         super.onStop();

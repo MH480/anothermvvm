@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.sanwix.mh.anothermvvm.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
+import com.sanwix.mh.anothermvvm.data.orms.vModels.PersonModel;
 import com.sanwix.mh.anothermvvm.databinding.ActivityLoginBinding;
 import com.sanwix.mh.anothermvvm.viewModels.LoginActivityVM;
 import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivity;
@@ -72,12 +73,17 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginActiv
     @Override
     public void btnLogin()
     {
-
+        openMainActivity();
     }
 
     @Override
     public void openMainActivity()
     {
-
+        startActivity(MainActivity.newIntent(this));
+        eventBus.post(new Event("logged in user", new PersonModel.Builder()
+                .setPhone(getViewModel().phone.get())
+                .setName(getViewModel().pass.get())
+                .build()));
+        finish();
     }
 }

@@ -57,7 +57,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     {
         super.onCreate(savedInstanceState);
         viewData = getViewData();
-
         viewModel.setNavigator(this);
     }
 

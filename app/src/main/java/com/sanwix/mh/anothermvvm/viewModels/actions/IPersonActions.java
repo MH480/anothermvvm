@@ -1,4 +1,4 @@
-package com.sanwix.mh.anothermvvm.data.orms.actions;
+package com.sanwix.mh.anothermvvm.viewModels.actions;
 
 import com.sanwix.mh.anothermvvm.data.orms.models.IBaseModel;
 

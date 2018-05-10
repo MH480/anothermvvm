@@ -3,7 +3,8 @@ package com.sanwix.mh.anothermvvm.di.Module;
 import android.app.Application;
 import android.content.Context;
 
-import com.sanwix.mh.anothermvvm.utils.App;
+import com.sanwix.mh.anothermvvm.App;
+import com.sanwix.mh.anothermvvm.data.apis.DataSender;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -22,5 +23,19 @@ public class AppModule
     }
 
     @Provides
+    @Singleton
+    App getApp(App app)
+    {
+        return app;
+    }
+
+    @Provides
     EventBus getEventBus(){ return EventBus.getDefault();}
+
+    @Provides
+    DataSender getDataSender()
+    {
+        return new DataSender();
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.sanwix.mh.anothermvvm.utils;
+package com.sanwix.mh.anothermvvm;
 
 import android.app.Activity;
 import android.app.Application;
@@ -37,4 +37,6 @@ public class App extends Application implements HasActivityInjector
     {
         return activityDispatchingAndroidInjector;
     }
+
+
 }

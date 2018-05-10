@@ -1,7 +1,7 @@
 package com.sanwix.mh.anothermvvm.commands;
 
 
-import com.sanwix.mh.anothermvvm.data.orms.actions.IPersonActions;
+import com.sanwix.mh.anothermvvm.viewModels.actions.IPersonActions;
 
 public class LoginCommand implements ICommand
 {
