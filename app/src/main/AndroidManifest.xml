@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:name=".utils.App"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.Activites.MainActivity.MainActivity">
+        <activity android:name=".views.activites.MainActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".views.Activites.LoginAcitvity.LoginActivity"/>
+        <activity android:name=".views.activites.LoginAcitvity.LoginActivity"/>
     </application>
 
 </manifest>
