@@ -15,14 +15,26 @@
         tools:context=".views.activites.MainActivity.MainActivity">
 
         <Button
+            android:id="@+id/btnGoToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:onClick="@{()-> VModel.}"
+            android:onClick="@{()-> VModel.btnOpenLogin()}"
+            android:text="Goto Login!"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="@{()-> VModel.btnExit()}"
+            android:text="exit!"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGoToLogin"/>
+
 
     </android.support.constraint.ConstraintLayout>
 </layout>

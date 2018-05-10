@@ -12,7 +12,10 @@ import com.sanwix.mh.anothermvvm.viewModels.BaseViewModel;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
+import dagger.android.AndroidInjection;
+
+public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity
+{
     private T mViewData;
     private VM mViewModel;
     private EventBus eBus;
@@ -32,10 +35,17 @@ public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseVie
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        PerformInjection();
         super.onCreate(savedInstanceState);
+        eBus = getEventBus();
         mViewData = DataBindingUtil.setContentView(this, getLayoutId());
         mViewModel = mViewModel != null ? mViewModel : getViewModel();
         mViewData.setVariable(getBindingVarriables(), mViewModel);
+    }
+
+    private void PerformInjection()
+    {
+        AndroidInjection.inject(this);
     }
 
     @Override
@@ -53,4 +63,6 @@ public abstract class BaseActivity<T extends ViewDataBinding, VM extends BaseVie
 
     @Subscribe
     public abstract void onEvent(Event e);
+
+
 }

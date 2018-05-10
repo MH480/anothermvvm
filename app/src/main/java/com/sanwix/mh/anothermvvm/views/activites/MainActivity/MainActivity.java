@@ -3,7 +3,7 @@ package com.sanwix.mh.anothermvvm.views.activites.MainActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.sanwix.mh.anothermvvm.BR;
+import com.android.databinding.library.baseAdapters.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
 import com.sanwix.mh.anothermvvm.databinding.ActivityMainBinding;
@@ -20,7 +20,8 @@ import javax.inject.Inject;
 public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityVM> implements IMainNavigator
 {
 
-    @Inject MainActivityVM viewModel;
+    @Inject
+    MainActivityVM viewModel;
     private ActivityMainBinding viewData;
     @Inject EventBus eventBus;
     @Override
@@ -56,6 +57,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     {
         super.onCreate(savedInstanceState);
         viewData = getViewData();
+
         viewModel.setNavigator(this);
     }
 
