@@ -1,5 +1,7 @@
 package com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity;
 
+import android.content.Context;
+
 import com.sanwix.mh.anothermvvm.App;
 import com.sanwix.mh.anothermvvm.viewModels.LoginActivityVM;
 
@@ -10,9 +12,9 @@ import dagger.Provides;
 public class LoginActivityModule
 {
     @Provides
-    LoginActivityVM getLoginViewModel(App app)
+    public LoginActivityVM getLoginViewModel(Context context)
     {
-        return new LoginActivityVM(app);
+        return new LoginActivityVM(((App) context));
     }
 
 }

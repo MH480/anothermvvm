@@ -2,10 +2,12 @@ package com.sanwix.mh.anothermvvm.views.activites.MainActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.android.databinding.library.baseAdapters.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
+import com.sanwix.mh.anothermvvm.data.orms.models.Person;
 import com.sanwix.mh.anothermvvm.databinding.ActivityMainBinding;
 import com.sanwix.mh.anothermvvm.viewModels.MainActivityVM;
 import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivity;
@@ -65,7 +67,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     @Override
     public void onEvent(Event e)
     {
-
+        Toast.makeText(this, e.eventName + " " + ((Person) e.data).phone, Toast.LENGTH_LONG).show();
     }
 
     @Override

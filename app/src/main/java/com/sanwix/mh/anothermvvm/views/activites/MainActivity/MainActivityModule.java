@@ -1,5 +1,7 @@
 package com.sanwix.mh.anothermvvm.views.activites.MainActivity;
 
+import android.content.Context;
+
 import com.sanwix.mh.anothermvvm.App;
 import com.sanwix.mh.anothermvvm.viewModels.MainActivityVM;
 
@@ -10,9 +12,9 @@ import dagger.Provides;
 public class MainActivityModule
 {
     @Provides
-    MainActivityVM getMainViewModel(App app)
+    public MainActivityVM getMainViewModel(Context context)
     {
-        return new MainActivityVM(app);
+        return new MainActivityVM(((App) context));
     }
 
 }

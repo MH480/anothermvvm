@@ -15,7 +15,6 @@ import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivity;
 import com.sanwix.mh.anothermvvm.views.bases.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import javax.inject.Inject;
 
@@ -62,8 +61,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginActiv
     }
 
 
-
-    @Subscribe
     @Override
     public void onEvent(Event e)
     {

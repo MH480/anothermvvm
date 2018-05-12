@@ -6,10 +6,13 @@ import com.sanwix.mh.anothermvvm.App;
 import com.sanwix.mh.anothermvvm.di.Builder.ActivityBuilder;
 import com.sanwix.mh.anothermvvm.di.Module.AppModule;
 
+import javax.inject.Singleton;
+
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 
+@Singleton
 @Component(modules = {AndroidInjectionModule.class, AppModule.class, ActivityBuilder.class})
 public interface AppComponent
 {

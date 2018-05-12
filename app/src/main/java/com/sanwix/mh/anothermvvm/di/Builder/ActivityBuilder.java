@@ -1,6 +1,8 @@
 package com.sanwix.mh.anothermvvm.di.Builder;
 
 
+import com.sanwix.mh.anothermvvm.views.activites.ListActivity.PersonListActivity;
+import com.sanwix.mh.anothermvvm.views.activites.ListActivity.PersonListActivityModule;
 import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivity;
 import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.LoginActivityModule;
 import com.sanwix.mh.anothermvvm.views.activites.MainActivity.MainActivity;
@@ -16,4 +18,7 @@ public abstract class ActivityBuilder
     public abstract MainActivity mainActivity();
     @ContributesAndroidInjector(modules = {LoginActivityModule.class})
     public abstract LoginActivity loginActivity();
+
+    @ContributesAndroidInjector(modules = {PersonListActivityModule.class})
+    public abstract PersonListActivity peronListActivity();
 }
