@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.activites.LoginAcitvity.LoginActivity"/>
+        <activity android:name=".views.activites.ListActivity.PersonListActivity"/>
     </application>
 
 </manifest>

@@ -1,8 +1,14 @@
 package com.sanwix.mh.anothermvvm.views.activites.ListActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import com.android.databinding.library.baseAdapters.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
-import com.sanwix.mh.anothermvvm.viewModels.BaseViewModel;
+import com.sanwix.mh.anothermvvm.data.apis.DataSender;
+import com.sanwix.mh.anothermvvm.databinding.ActivityListBinding;
 import com.sanwix.mh.anothermvvm.viewModels.PersonListActivityVM;
 import com.sanwix.mh.anothermvvm.views.bases.BaseActivity;
 
@@ -10,15 +16,20 @@ import org.greenrobot.eventbus.EventBus;
 
 import javax.inject.Inject;
 
-public class PersonListActivity extends BaseActivity
+public class PersonListActivity extends BaseActivity<ActivityListBinding, PersonListActivityVM> implements IPersonListNavigator
 {
     @Inject
     PersonListActivityVM viewModel;
+    @Inject
+    EventBus eventBus;
+    @Inject
+    DataSender repo;
 
-    @Override
-    public int getBindingVarriables()
+    private ActivityListBinding viewData;
+
+    public static Intent newIntent(BaseActivity base)
     {
-        return 0;
+        return new Intent(base, PersonListActivity.class);
     }
 
     @Override
@@ -28,20 +39,35 @@ public class PersonListActivity extends BaseActivity
     }
 
     @Override
-    public BaseViewModel getViewModel()
+    public int getBindingVarriables()
     {
-        return null;
+        return BR.VModel;
+    }
+
+    @Override
+    public PersonListActivityVM getViewModel()
+    {
+        return viewModel;
     }
 
     @Override
     public EventBus getEventBus()
     {
-        return null;
+        return eventBus;
     }
 
     @Override
     public void onEvent(Event e)
     {
 
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        viewData = getViewData();
+        viewModel.setNavigator(this);
+        viewModel.LoadData();
     }
 }

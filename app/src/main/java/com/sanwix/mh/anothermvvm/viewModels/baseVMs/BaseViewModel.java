@@ -1,4 +1,4 @@
-package com.sanwix.mh.anothermvvm.viewModels;
+package com.sanwix.mh.anothermvvm.viewModels.baseVMs;
 
 import android.arch.lifecycle.AndroidViewModel;
 import android.databinding.ObservableField;

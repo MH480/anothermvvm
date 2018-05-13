@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.sanwix.mh.anothermvvm.viewModels.ItemViewModel;
+import com.sanwix.mh.anothermvvm.viewModels.baseVMs.ItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

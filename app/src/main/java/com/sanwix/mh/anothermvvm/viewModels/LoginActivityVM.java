@@ -4,6 +4,7 @@ import android.databinding.ObservableField;
 
 import com.sanwix.mh.anothermvvm.App;
 import com.sanwix.mh.anothermvvm.utils.ValidatorUtils;
+import com.sanwix.mh.anothermvvm.viewModels.baseVMs.BaseViewModel;
 import com.sanwix.mh.anothermvvm.views.activites.LoginAcitvity.ILoginNavigator;
 
 import io.reactivex.Observable;

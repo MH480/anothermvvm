@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sanwix.mh.anothermvvm.data.Event;
-import com.sanwix.mh.anothermvvm.viewModels.BaseViewModel;
+import com.sanwix.mh.anothermvvm.viewModels.baseVMs.BaseViewModel;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

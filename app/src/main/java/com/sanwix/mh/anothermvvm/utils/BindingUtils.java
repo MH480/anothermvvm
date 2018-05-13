@@ -1,8 +1,10 @@
 package com.sanwix.mh.anothermvvm.utils;
 
-import android.content.Context;
 import android.databinding.BindingAdapter;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
+
+import com.sanwix.mh.anothermvvm.viewModels.PersonRecyclerVM;
 
 public final class BindingUtils
 {
@@ -10,14 +12,19 @@ public final class BindingUtils
     {
     }
 
-    public static void doSomethings()
+
+    @BindingAdapter("adapter")
+    public static void setRecyclerViewAdapter(RecyclerView rcView, PersonRecyclerVM viewModel)
     {
+        viewModel.setupRecyclerView(rcView, new PersonRecyclerVM
+                .LayoutManagerAttributeBuilder(PersonRecyclerVM.Layout_Manager_Type.Linear)
+                .setReverseLayout(false)
+                .setVertically(true));
     }
 
     @BindingAdapter("imageUrl")
     public static void setImageUrl(ImageView imageView, String url)
     {
-        Context context = imageView.getContext();
-        //piccaso.with(context).load(url).into(imageView);
+
     }
 }
