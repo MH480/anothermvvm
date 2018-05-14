@@ -2,6 +2,8 @@ package com.sanwix.mh.anothermvvm.viewModels.baseVMs;
 
 import android.arch.lifecycle.AndroidViewModel;
 import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
+import android.view.View;
 
 import com.sanwix.mh.anothermvvm.App;
 
@@ -16,6 +18,7 @@ public abstract class BaseViewModel<N> extends AndroidViewModel
         super(app);
     }
 
+    public ObservableInt LoadingState = new ObservableInt(View.GONE);
     protected N Navigator;
 
     public N getNavigator()

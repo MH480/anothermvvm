@@ -1,9 +1,13 @@
 package com.sanwix.mh.anothermvvm.data.apis;
 
 
+import com.google.gson.reflect.TypeToken;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 import com.sanwix.mh.anothermvvm.BuildConfig;
 import com.sanwix.mh.anothermvvm.data.ServerResponse;
+import com.sanwix.mh.anothermvvm.data.orms.vModels.PersonModel;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 
@@ -13,7 +17,7 @@ import io.reactivex.Observable;
 
 public class DataSender implements IDataServices
 {
-    public static final String BASE_URL = BuildConfig.BASE_URL;
+    public static final String BASE_URL = "http://www.mhmusic.ir/testJson/json.html";
     public static final String Base_USER = BuildConfig.BASE_USER;
 
     public DataSender()
@@ -21,10 +25,23 @@ public class DataSender implements IDataServices
     }
 
     @Override
-    public Observable<ServerResponse> GetAllPeople()
+    public Observable<ServerResponse<List<PersonModel>>> GetAllPeople()
     {
-        return Rx2AndroidNetworking.get(BASE_URL + "/2bd7032de8be3c4094f871ad4b172047")
+        TypeToken<ServerResponse<List<PersonModel>>> t = new TypeToken<ServerResponse<List<PersonModel>>>()
+        {
+        };
+        return Rx2AndroidNetworking.get(BASE_URL)
                 .build()
-                .getObjectObservable(ServerResponse.class);
+                .getParseObservable(t);
     }
+
+    @Override
+    public Observable<String> GetAllPeopleAsString()
+    {
+        return Rx2AndroidNetworking.get("http://test.services.sayeh.ir/api/ProblemCategory/GetByApplicationId?id=1")
+                .build()
+                .getStringObservable();
+    }
+
+
 }

@@ -7,7 +7,7 @@ import com.sanwix.mh.anothermvvm.viewModels.baseVMs.ItemViewModel;
 
 public class PersonRecyclerItemVM extends ItemViewModel<PersonModel>
 {
-    public final ObservableField<Boolean> isSelected = new ObservableField<>(false);
+    public final ObservableField<Boolean> isSelected = new ObservableField<>(true);
     public ObservableField<String> personName = new ObservableField<>();
     public ObservableField<String> personEmail = new ObservableField<>();
     public ObservableField<String> personPhone = new ObservableField<>();
@@ -31,7 +31,7 @@ public class PersonRecyclerItemVM extends ItemViewModel<PersonModel>
 
     public void onRowClicked()
     {
-        isSelected.set(!isSelected.get());
+
     }
 
 

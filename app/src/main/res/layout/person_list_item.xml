@@ -13,7 +13,8 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:enabled="@{Item_VModel.isSelected}"
+        android:clickable="true"
+        android:focusable="true"
         android:onClick="@{()-> Item_VModel.onRowClicked()}">
 
         <ImageView

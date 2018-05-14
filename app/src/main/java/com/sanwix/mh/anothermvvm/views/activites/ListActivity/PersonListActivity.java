@@ -7,12 +7,12 @@ import android.support.annotation.Nullable;
 import com.android.databinding.library.baseAdapters.BR;
 import com.sanwix.mh.anothermvvm.R;
 import com.sanwix.mh.anothermvvm.data.Event;
-import com.sanwix.mh.anothermvvm.data.apis.DataSender;
 import com.sanwix.mh.anothermvvm.databinding.ActivityListBinding;
 import com.sanwix.mh.anothermvvm.viewModels.PersonListActivityVM;
 import com.sanwix.mh.anothermvvm.views.bases.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import javax.inject.Inject;
 
@@ -22,8 +22,7 @@ public class PersonListActivity extends BaseActivity<ActivityListBinding, Person
     PersonListActivityVM viewModel;
     @Inject
     EventBus eventBus;
-    @Inject
-    DataSender repo;
+
 
     private ActivityListBinding viewData;
 
@@ -56,6 +55,7 @@ public class PersonListActivity extends BaseActivity<ActivityListBinding, Person
         return eventBus;
     }
 
+    @Subscribe
     @Override
     public void onEvent(Event e)
     {
@@ -69,5 +69,6 @@ public class PersonListActivity extends BaseActivity<ActivityListBinding, Person
         viewData = getViewData();
         viewModel.setNavigator(this);
         viewModel.LoadData();
+
     }
 }

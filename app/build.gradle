@@ -13,13 +13,12 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField("String","BASE_URL","\"https://gist.github.com/MH480\"")
+            buildConfigField("String","BASE_URL","\"http://mhmusic.ir\"")
             buildConfigField("String","BASE_USER","\"MH480\"")
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String","BASE_URL","\"https://gist.github.com/MH480\"")
             buildConfigField("String","BASE_USER","\"MH480\"")
         }
     }
@@ -63,5 +62,4 @@ dependencies {
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.13'
-
 }

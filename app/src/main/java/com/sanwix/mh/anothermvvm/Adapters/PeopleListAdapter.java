@@ -36,7 +36,7 @@ public class PeopleListAdapter extends BaseRecyclerAdapter<PersonModel, PersonRe
         PersonRecyclerItemVM itemVM = new PersonRecyclerItemVM();
         PersonListItemBinding binding = DataBindingUtil.bind(v);
         binding.setVariable(BR.Item_VModel, itemVM);
-        return new PersonViewHolder(v, null, itemVM);
+        return new PersonViewHolder(v, binding, itemVM);
     }
 
 
